@@ -3,9 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Simple Calculator in JS</title>
 </head>
+<style>
+    body{
+        margin:0%;
+        padding: 0%;
+        background-color: #ECF4E8;
+        color: #93BFC7;
+    }
+
+    .calci{
+        background-color: #ABE7B2;
+        width: fit-content;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin: 25px auto;
+        padding: 20px 40px;
+        border-radius: 25px;
+    }
+
+    .inp{
+        margin:10px;
+        border: 1px solid;
+        border-color: #93BFC7;
+        border-radius: 10px;
+        align-items: center;
+        justify-content: center;
+        padding: 5px 15px;
+        height: 30px;
+        width: 200px;
+    }
+    #result-id{
+        color: black;
+        font-size: 20px;
+    }
+
+    #dombtn{
+        padding: 5px 15px;
+        font-size: 20px;
+        width: 100px;
+        border-radius: 10px;
+        border: none;
+        margin: auto 10px;
+        cursor: pointer;
+
+    }
+
+    #dombtn:hover{
+        background-color: #93BFC7;
+        transition: 0.5s;
+    }
+</style>
 <body>
-    
+    <div class="calci">
+        <input type="number" id="inpnum1" class="inp" placeholder="Enter first number">
+        <input type="number" id="inpnum2" class="inp" placeholder="Enter second number">
+
+        <p id="result-id">Result :</p>
+
+        <div>
+            <button id="dombtn" onclick="addnums()">Add</button>
+            <button id="dombtn" onclick="clearnums()">Clear</button>
+        </div>
+    </div>
+
+    <script>
+        function addnums(){
+            const inpnum1=document.getElementById("inpnum1");
+            const inpnum2=document.getElementById("inpnum2");
+            const resnum=document.getElementById("result-id");
+
+            const sum=parseInt(inpnum1.value)+parseInt(inpnum2.value);
+            resnum.innerText=`Result : ${sum}`;
+        }
+        function clearnums(){
+            const inpnum1=document.getElementById("inpnum1");
+            const inpnum2=document.getElementById("inpnum2");
+            const resnum=document.getElementById("result-id");
+
+            inpnum1.value="";
+            inpnum2.value="";
+            resnum.innerText=`Result : `;
+        }
+    </script>
 </body>
 </html>
