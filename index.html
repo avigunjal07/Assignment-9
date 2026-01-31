@@ -61,7 +61,9 @@
     <h1 style="text-align: center; font-size: 50px;">Simple calculator using DOM in JavaScript</h1>
     <div class="calci">
         <input type="number" id="inpnum1" class="inp" placeholder="Enter first number">
+        <span id="num1val"></span>
         <input type="number" id="inpnum2" class="inp" placeholder="Enter second number">
+        <span id="num2val"></span>
 
         <p id="result-id">Result :</p>
 
@@ -76,17 +78,19 @@
             const inpnum1=document.getElementById("inpnum1");
             const inpnum2=document.getElementById("inpnum2");
             const resnum=document.getElementById("result-id");
+            const num1validation=document.getElementById("num1val");
+            const num2validation=document.getElementById("num2val");
 
             const val1=parseInt(inpnum1.value);
 
             if(isNaN(val1)==true){
-                resnum.innerText="Enter valid first number";
+                num1validation.innerText="Enter valid first number";
                 return;
             }
             const val2=parseInt(inpnum2.value);
 
             if(isNaN(val2)==true){
-                resnum.innerText="Enter valid second number";
+                num2validation.innerText="Enter valid second number";
                 return;
             }
 
@@ -97,10 +101,15 @@
             const inpnum1=document.getElementById("inpnum1");
             const inpnum2=document.getElementById("inpnum2");
             const resnum=document.getElementById("result-id");
+            const num1validation=document.getElementById("num1val");
+            const num2validation=document.getElementById("num2val");
+            
 
             inpnum1.value="";
             inpnum2.value="";
             resnum.innerText=`Result : `;
+            num1validation.innerText="";
+            num2validation.innerText="";
         }
     </script>
 </body>
