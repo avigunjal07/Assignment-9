@@ -77,7 +77,20 @@
             const inpnum2=document.getElementById("inpnum2");
             const resnum=document.getElementById("result-id");
 
-            const sum=parseInt(inpnum1.value)+parseInt(inpnum2.value);
+            const val1=parseInt(inpnum1.value);
+
+            if(isNaN(val1)==true){
+                resnum.innerText="Enter valid first number";
+                return;
+            }
+            const val2=parseInt(inpnum2.value);
+
+            if(isNaN(val2)==true){
+                resnum.innerText="Enter valid second number";
+                return;
+            }
+
+            const sum=val1+val2;
             resnum.innerText=`Result : ${sum}`;
         }
         function clearnums(){
