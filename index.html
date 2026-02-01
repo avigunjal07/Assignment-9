@@ -58,14 +58,14 @@
 </style>
 <body>
 
-    <h1 style="text-align: center; font-size: 50px;">Simple calculator using DOM in JavaScript</h1>
+    <h1 style="text-align: center; font-size: 50px;">Perimeter of a Rectangle</h1>
     <div class="calci">
-        <input type="number" id="inpnum1" class="inp" placeholder="Enter first number">
+        <input type="number" id="inpnum1" class="inp" placeholder="Enter length of rectangle">
         <span id="num1val"></span>
-        <input type="number" id="inpnum2" class="inp" placeholder="Enter second number">
+        <input type="number" id="inpnum2" class="inp" placeholder="Enter breadth of rectangle">
         <span id="num2val"></span>
 
-        <p id="result-id">Result :</p>
+        <p id="result-id">Perimeter of Rectangle :</p>
 
         <div>
             <button id="dombtn" onclick="addnums()">Add</button>
@@ -94,8 +94,8 @@
                 return;
             }
 
-            const sum=val1+val2;
-            resnum.innerText=`Result : ${sum}`;
+            const sum=(val1+val2)*2;
+            resnum.innerText=`Perimeter of Rectangle : ${sum} units`;
         }
         function clearnums(){
             const inpnum1=document.getElementById("inpnum1");
@@ -107,7 +107,7 @@
 
             inpnum1.value="";
             inpnum2.value="";
-            resnum.innerText=`Result : `;
+            resnum.innerText=`Perimeter of Rectangle : `;
             num1validation.innerText="";
             num2validation.innerText="";
         }
